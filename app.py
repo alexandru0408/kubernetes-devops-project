@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from routes.user import user
+from routes.healthcheck import healthcheck
 from config.openapi import tags_metadata
 
 app = FastAPI(
@@ -10,3 +11,4 @@ app = FastAPI(
 )
 
 app.include_router(user)
+app.include_router(healthcheck)
