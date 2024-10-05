@@ -1,6 +1,8 @@
+import os
 from sqlalchemy import create_engine, MetaData
 
-engine = create_engine("postgresql://admin:password@db:5432/storedb")
+DATABASE_URL = os.getenv("DATABASE_URL")
+engine = create_engine(DATABASE_URL)
 
 meta = MetaData()
 
